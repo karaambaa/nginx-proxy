@@ -24,6 +24,7 @@ It gives you the following paths:
 ### Step 1
 
 Install Organizr (https://github.com/causefx/Organizr) and set the correct path in the media_proxy/sites-available.conf. And install and setup SSL-Certificats (https://certbot.eff.org).
+In my case I had to block all the ports (except 80 and 443) with ufw...
 
 ### Step 2
 

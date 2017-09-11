@@ -1,25 +1,33 @@
 nginx-plex-deluge-proxy
 =======================
 
-This is an NGINX configuration to allow plex and deluge reverse proxy.
+This is an NGINX configuration to allow plex and all it's little helpers to stay behind a reverse proxy.
 
 It gives you the following paths:
 
-* `http://X.X.X.X/` -> plex
+* `http://X.X.X.X/plex`
 * `http://X.X.X.X/deluge`
-* `http://X.X.X.X/couchpotato`
-
-On my laptop, I edited `/etc/hosts` to include `X.X.X.X media` so that I can type `http://media` instead of IP.
+* `http://X.X.X.X/radarr`
+* `http://X.X.X.X/nzbget`
+* `http://X.X.X.X/sonarr`
+* `http://X.X.X.X/mylar`
+* `http://X.X.X.X/headphones`
+* `http://X.X.X.X/pyload`
+* `http://X.X.X.X/jackett`
+* `http://X.X.X.X/lazylibrarian`
+* `http://X.X.X.X/nzbhydra`
+* `http://X.X.X.X/ombi`
+* `http://X.X.X.X/plexpy`
 
 ## Installation
 
 ### Step 1
 
-These files need to be copied/cloned into the NGINX config folder, for example `/etc/nginx` on Ubuntu.
+Install Organizr (https://github.com/causefx/Organizr) and set the correct path in the media_proxy/sites-available.conf. And install and setup SSL-Certificats (https://certbot.eff.org).
 
 ### Step 2
 
-Create `media_proxy/htpasswd` file using [this handy site](http://www.htaccesstools.com/htpasswd-generator/) or native means, whatever you feel comfortable with. This username/password will be prompted for when you try to access the proxy.
+These files need to be copied/cloned into the NGINX config folder, for example `/etc/nginx` on Ubuntu.
 
 ### Step 3
 
@@ -27,5 +35,4 @@ Restart NGNIX `sudo service nginx restart`
 
 ### Step 4
 
-You should be able to open `http://X.X.X.X` and see Plex now.
-
+You should be able to open `http://X.X.X.X` and see Organizr now.
